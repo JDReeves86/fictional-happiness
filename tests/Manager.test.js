@@ -1,13 +1,51 @@
-const Manager = require('../utils/Manager')
+const Manager = require('../utils/Manager.js')
+
+const obj = new Manager('test', 123, 'test@test.com', 12);
 
 describe('Manager', () => {
     describe('Manager', () => {
         it("should return an object containing 'name', 'id', & 'email' properties when called with the 'new' keyword.", () => {
-            const obj = new Manager();
+    
 
             expect('name' in obj).toEqual(true);
             expect('id' in obj).toEqual(true);
             expect('email' in obj).toEqual(true);
+            expect('officeNumber' in obj).toEqual(true);
         });
-    })
+    });
+    describe('getName', () => {
+        it("should return a value that is equal to the Managers 'name' property", () => {
+
+
+            expect(obj.getName()).toEqual('test')
+        });
+    });
+    describe('getId', () => {
+        it("should return a value that is equal to the Managers 'id' property", () => {
+
+
+            expect(obj.getId()).toEqual(123)
+        });
+    });
+    describe('getEmail', () => {
+        it("should return a value that is equal to the Managers 'email' property", () => {
+
+
+            expect(obj.getEmail()).toEqual('test@test.com')
+        });
+    });
+    describe('getOfficeNumber', () => {
+        it("should return a value that is equal to the Managers 'officeNumber' property", () => {
+            
+
+            expect(obj.getOfficeNumber()).toEqual(12)
+        });
+    });
+    describe('getRole', () => {
+        it("should return a value that is equal 'Manager'", () => {
+
+
+            expect(obj.getRole()).toEqual('Manager')
+        });
+    });
 })

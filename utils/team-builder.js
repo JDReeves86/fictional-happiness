@@ -1,3 +1,24 @@
+class Teammember {
+    Manager(name, id, email, ph) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+        this.ph = ph;
+    };
+    Engineer(name, id, email, gh) {
+        this.name = name;
+        this.id = id
+        this.email = email;
+        this.gh = gh;
+    };
+    Intern(name, id, email, school) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+        this.school = school;
+    };
+}
+
 function Manager(name, id, email, ph) {
     this.name = name;
     this.id = id;
@@ -23,4 +44,5 @@ module.exports = {
     Manager,
     Engineer,
     Intern,
+    Teammember,
 };

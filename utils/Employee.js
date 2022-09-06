@@ -18,8 +18,4 @@ class Employee {
     }
 }
 
-let jacob = new Employee('Jacob', 123, 'fake@aol.com')
-
-console.log(jacob.getRole())
-
 module.exports = Employee;

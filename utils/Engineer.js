@@ -10,8 +10,7 @@ class Engineer extends Employee {
     };
     getRole() {
         return 'Engineer'
-    }
-    // methods for returning role and github
-}
+    };
+};
 
 module.exports = Engineer;

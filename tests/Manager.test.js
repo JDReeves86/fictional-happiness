@@ -1,4 +1,4 @@
-const Manager = require('../utils/Manager.js')
+const Manager = require('../libs/Manager.js')
 
 const obj = new Manager('test', 123, 'test@test.com', 12);
 

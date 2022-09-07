@@ -1,4 +1,4 @@
-const Employee = require('../utils/Employee')
+const Employee = require('../libs/Employee')
 const obj = new Employee('test', 123, 'test@test.com');
 
 

@@ -1,5 +1,7 @@
 let generatePage = (response) => {
-    console.log(response)
+    response.forEach(element => {
+        console.log(element)
+    });
 }
 
 

@@ -1,4 +1,4 @@
-const Engineer = require('../utils/Engineer')
+const Engineer = require('../libs/Engineer')
 
 const obj = new Engineer('test', 123, 'test@test.com', 'test@github');
 

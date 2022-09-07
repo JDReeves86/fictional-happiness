@@ -11,13 +11,13 @@ let employeeArr =[]
 const saveEmployee = (response) => {
     switch (response.role) {
         case 'Manager':
-            employeeArr.push(new Manager(response.name, response.id, response.email, response.officeNumber));
+            employeeArr.push(new Manager(response.role, response.name, response.id, response.email, response.officeNumber));
             break;
         case 'Engineer':
-            employeeArr.push(new Engineer(response.name, response.id, response.email, response.github));
+            employeeArr.push(new Engineer(response.role, response.name, response.id, response.email, response.github));
             break;
         case 'Intern':
-            employeeArr.push(new Intern(response.name, response.id, response.email, response.school));
+            employeeArr.push(new Intern(response.role, response.name, response.id, response.email, response.school));
             break;
         default:
             return null

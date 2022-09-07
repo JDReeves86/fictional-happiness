@@ -1,0 +1,20 @@
+:root {
+    --dark: #252525;
+    --white: white;
+    --blu: #00b7b7;
+    --red: #b70000;
+    --yel: #fcd50e;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.container {
+    background-color: var(--dark);
+}

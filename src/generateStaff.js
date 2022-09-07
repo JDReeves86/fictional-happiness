@@ -1,7 +1,7 @@
-const Employee = require('../utils/Employee');
-const Manager = require('../utils/Manager');
-const Engineer = require('../utils/Engineer');
-const Intern = require('../utils/Intern');
+const Employee = require('../libs/Employee');
+const Manager = require('../libs/Manager');
+const Engineer = require('../libs/Engineer');
+const Intern = require('../libs/Intern');
 const generatePage = require('./generatePage');
 
 

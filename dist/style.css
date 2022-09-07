@@ -10,11 +10,19 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+    background-color: var(--dark);
+}
+
 .title {
     background-color: var(--red);
     color: var(--white);
 }
 
-.container {
-    background-color: var(--dark);
+/* p.title {
+    color: var(--blu);
+} */
+
+.card {
+    min-height: 17rem;
 }

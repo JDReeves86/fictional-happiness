@@ -18,7 +18,9 @@ const generatePage = (data) => {
         <h1 class="title is-1 has-text-centered py-6">Our Team</h1>
     </header>
     <section class="container.is-full-hd p-6" id="card-container">
-    ${data.map(element => buildCards(element))}
+      <div class="columns">
+        ${data.map(element => buildCards(element))}
+      </div>
     </section>
 
 </body>
@@ -31,35 +33,98 @@ const generatePage = (data) => {
 const buildCards = (data) => {
   switch(data.role) {
     case 'Manager':
-    return string = 'MAnager TBD';
+      return string = 
+      `
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <p class="title px-4 py-2">
+              ${data.name}
+            </p>
+            <p class="subtitle">
+              ${data.role}; 
+            </p>
+            <p class="subtitle">
+            ${data.getId()}
+            </p>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+              <span>
+                Email: <a href="${data.getEmail()}">${data.email}</a>
+              </span>
+            </p>
+            <p class="card-footer-item">
+              <span>
+                ${data.getOfficeNumber()}
+              </span>
+            </p>
+          </footer>
+        </div>
+      </div>
+      `;
     case 'Engineer':
       return string = 
       `
-      <div class="card">
-      <div class="card-content">
-        <p class="title">
-          ${data.role}
-        </p>
-        <p class="subtitle">
-          ${data.name}
-        </p>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <p class="title px-4 py-2">
+              ${data.name}
+            </p>
+            <p class="subtitle">
+              ${data.role}; 
+            </p>
+            <p class="subtitle">
+            ${data.getId()}
+            </p>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+              <span>
+                Email: <a href="${data.getEmail()}">${data.email}</a>
+              </span>
+            </p>
+            <p class="card-footer-item">
+              <span>
+                Find on <a href="${data.getGithub()}" target="none">Github</a>
+              </span>
+            </p>
+          </footer>
+        </div>
       </div>
-      <footer class="card-footer">
-        <p class="card-footer-item">
-          <span>
-            View on <a href="${data.getEmail()}">Email</a>
-          </span>
-        </p>
-        <p class="card-footer-item">
-          <span>
-            Share on <a href="${data.getGithub()}" target="none">Github</a>
-          </span>
-        </p>
-      </footer>
-    </div>
       `;
     case 'Intern':
-      return string = 'Intern TBD';
+      return string = 
+      `
+    <div class="column is-one-third">
+      <div class="card">
+        <div class="card-content">
+          <p class="title px-4 py-2">
+            ${data.name}
+          </p>
+          <p class="subtitle">
+            ${data.role}; 
+          </p>
+          <p class="subtitle">
+          ${data.getId()}
+          </p>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              Email: <a href="${data.getEmail()}">${data.email}</a>
+            </span>
+          </p>
+          <p class="card-footer-item">
+            <span>
+              ${data.getSchool()}
+            </span>
+          </p>
+        </footer>
+      </div>
+    </div>
+      `;
   }
 
 }

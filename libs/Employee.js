@@ -12,7 +12,7 @@ class Employee {
         return this.id
     };
     getEmail() {
-        return this.email
+        return `mailto:${this.email}`
     };
     getRole() {
         return 'Employee'

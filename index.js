@@ -61,11 +61,17 @@ const questions = [
     },
 ]
 
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => 
+        err ? console.log(err) : console.log('Success! Please note that if a license has been chosen, you must input the year and your information in the License section.')
+    )
+}
+
 function init() {
     return inquirer.prompt(questions).then((response) => {
         if (!response.addTeam) {
             generateStaff.saveEmployee(response)
-            generatePage.generatePage(generateStaff.getStaff())
+            writeToFile('./dist/index.html' ,generatePage.generatePage(generateStaff.getStaff()))
         }
         else {
             generateStaff.saveEmployee(response)

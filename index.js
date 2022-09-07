@@ -1,6 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generatePage = require('./src/generatePage');
+const generateStaff = require('./src/generateStaff');
+const generatePage = require('./src/generatePage')
 
 const questions = [
     {
@@ -62,14 +63,12 @@ const questions = [
 
 function init() {
     return inquirer.prompt(questions).then((response) => {
-        // generatePage.generatePage(response)
         if (!response.addTeam) {
-            generatePage.saveEmployee(response)
-            generatePage.parseEmployees()
-            generatePage.generatePage(response)
+            generateStaff.saveEmployee(response)
+            generatePage.generatePage(generateStaff.getStaff)
         }
         else {
-            generatePage.saveEmployee(response)
+            generateStaff.saveEmployee(response)
             return init()
         }
     })

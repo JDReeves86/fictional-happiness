@@ -7,39 +7,27 @@ const questions = [
         type: 'list',
         message: 'What is the Employees role?',
         choices: ['Manager', 'Engineer', 'Intern'],
-        name: 'employee.role',
-        when(response) {
-            return response.addTeam === true
+        name: 'role',
+        validate: (x) => {
+            if (x == 'Manager' && response.employee.role.includes(x)) {
+                return 'There can be only one manager'
+            }
         },
-        // validate: (x) => {
-        //     if (x == 'Manager' && response.employee.role.includes(x)) {
-        //         return 'There can be only one manager'
-        //     }
-        // },
     },
     {
         type: 'input',
         message: 'What is the Employees name?',
         name: 'name',
-        when(response) {
-            return response.addTeam === true
-        },
     },
     {
         type: 'input',
         message: 'What is the their Employee ID?',
         name: 'id',
-        when(response) {
-            return response.addTeam === true
-        },
     },
     {
         type: 'input',
         message: 'What is the Employees E-mail address?',
         name: 'email',
-        when(response) {
-            return response.addTeam === true
-        },
     },
     {
         type: 'input',
@@ -74,13 +62,16 @@ const questions = [
 
 function init() {
     return inquirer.prompt(questions).then((response) => {
-        generatePage.generatePage(response)
-        // if (!response.addTeam) {
-        //     generatePage.generatePage(response)
-        // }
-        // else {
-        //     return init()
-        // }
+        // generatePage.generatePage(response)
+        if (!response.addTeam) {
+            generatePage.saveEmployee(response)
+            generatePage.parseEmployees()
+            generatePage.generatePage(response)
+        }
+        else {
+            generatePage.saveEmployee(response)
+            return init()
+        }
     })
 }
 

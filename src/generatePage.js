@@ -1,6 +1,8 @@
-let buildPage = () => {
-
+let generatePage = (response) => {
+    console.log(response)
 }
 
 
-module.exports = buildPage
+module.exports = {
+    generatePage
+}

@@ -2,53 +2,86 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generatePage = require('./src/generatePage');
 
-const questions = {
-    generic: [
-        {
-            type: 'confirm',
-            message: 'Do you want to add Employees to your team?',
-            name: 'addTeam'
+const questions = [
+    {
+        type: 'list',
+        message: 'What is the Employees role?',
+        choices: ['Manager', 'Engineer', 'Intern'],
+        name: 'employee.role',
+        when(response) {
+            return response.addTeam === true
         },
-        {
-            type: 'input',
-            message: 'What is the Employees role?',
-            name: 'role'
+        // validate: (x) => {
+        //     if (x == 'Manager' && response.employee.role.includes(x)) {
+        //         return 'There can be only one manager'
+        //     }
+        // },
+    },
+    {
+        type: 'input',
+        message: 'What is the Employees name?',
+        name: 'name',
+        when(response) {
+            return response.addTeam === true
         },
-        {
-            type: 'input',
-            message: 'What is the Employees name?',
-            name: 'name'
+    },
+    {
+        type: 'input',
+        message: 'What is the their Employee ID?',
+        name: 'id',
+        when(response) {
+            return response.addTeam === true
         },
-        {
-            type: 'input',
-            message: 'What is the their Employee ID?',
-            name: 'id'
+    },
+    {
+        type: 'input',
+        message: 'What is the Employees E-mail address?',
+        name: 'email',
+        when(response) {
+            return response.addTeam === true
         },
-        {
-            type: 'input',
-            message: 'What is the Employees E-mail address?',
-            name: 'email'
+    },
+    {
+        type: 'input',
+        message: 'What is the their office number?',
+        name: 'officeNumber',
+        when(response) {
+            return response.role === 'Manager'
         },
-
-        
-        
-    ],
-    manager: 'What is the Managers office number?',
-    engineer: 'What is the Engineers GitHub username?',
-    intern: 'What school is the Intern associated with?'
-}
-
-
-
+    },
+    {
+        type: 'input',
+        message: 'What is the their Github username?',
+        name: 'github',
+        when(response) {
+            return response.role === 'Engineer'
+        },
+    },
+    {
+        type: 'input',
+        message: 'What school are they associated with?',
+        name: 'school',
+        when(response) {
+            return response.role === 'Intern'
+        },
+    },
+    {
+        type: 'confirm',
+        message: 'Do you want to add more employees to your team?',
+        name: 'addTeam'
+    },
+]
 
 function init() {
-    inquirer
-        .prompt([
-
-        ])
-        .then((response) => {
-            console.log(response)
-        })
+    return inquirer.prompt(questions).then((response) => {
+        generatePage.generatePage(response)
+        // if (!response.addTeam) {
+        //     generatePage.generatePage(response)
+        // }
+        // else {
+        //     return init()
+        // }
+    })
 }
 
 init()

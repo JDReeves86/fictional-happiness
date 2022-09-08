@@ -18,21 +18,25 @@ const managerQuestions = [
         type: 'input',
         message: 'What is your name?',
         name: 'name',
+        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
     },
     {
         type: 'input',
         message: 'What is your Employee ID?',
         name: 'id',
+        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
     },
     {
         type: 'input',
         message: 'What is your E-mail address?',
         name: 'email',
+        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
     },
     {
         type: 'input',
         message: 'What is your office number?',
         name: 'officeNumber',
+        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
     },
     {
         type: 'list',
@@ -54,21 +58,25 @@ const questions =[
         type: 'input',
         message: 'What is the Employees name?',
         name: 'name',
+        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
     },
     {
         type: 'input',
         message: 'What is the their Employee ID?',
         name: 'id',
+        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
     },
     {
         type: 'input',
         message: 'What is the Employees E-mail address?',
         name: 'email',
+        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
     },
     {
         type: 'input',
         message: 'What is the their Github username?',
         name: 'github',
+        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
         when(response) {
             return response.role === 'Engineer'
         },
@@ -77,6 +85,7 @@ const questions =[
         type: 'input',
         message: 'What school are they associated with?',
         name: 'school',
+        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
         when(response) {
             return response.role === 'Intern'
         },

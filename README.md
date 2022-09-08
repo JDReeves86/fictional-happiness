@@ -1,3 +1,133 @@
+# Challenge 10 - Fictional-Happiness
+
+
+## HTML Generator
+
+---
+
+### Contents 
+
+---
+
+1. Objectives
+2. About
+3. Screenshots
+4. Links
+5. Assignment details & grading rubric (*ignore me*)
+
+<br>
+<br>
+
+### Objectives ###
+
+---
+
+<br>
+
+1. WHEN a user is prompted for their team members and their information THEN an HTML file is generated that displays a nicely formatted team roster based on user input.
+2. WHEN a user clicks on an email address in the HTML THEN the default email program opens and populates the TO field of the email with the address.
+3. WHEN users click on the GitHub username THEN that GitHub profile opens in a new tab.
+4. WHEN the application is started THEN the user is prompted to enter the team manager’s name, employee ID, email address, and office number.
+5. WHEN the team manager’s name, employee ID, email address, and office number is entered THEN the user is presented with a menu with the option to add an engineer or an intern or to finish building my team.
+6. WHEN the engineer option is selectec THEN the user is prompted to enter the engineer’s name, ID, email, and GitHub username, and then taken back to the menu.
+7. WHEN the intern option is selected THEN the user is prompted to enter the intern’s name, ID, email, and school, and then taken back to the menu.
+8. WHEN the user decides to finish building my team THEN they exit the application, and the HTML is generated.
+
+<br>
+<br>
+
+### About ###
+
+---
+
+<br>
+
+1. WHEN a user is prompted for their team members and their information THEN an HTML file is generated that displays a nicely formatted team roster based on user input..
+    > 
+
+<br>
+
+2. WHEN a user clicks on an email address in the HTML THEN the default email program opens and populates the TO field of the email with the address.
+    > 
+
+<br>
+
+3. WHEN users click on the GitHub username THEN that GitHub profile opens in a new tab.
+    > 
+<br>
+
+4. WHEN the application is started THEN the user is prompted to enter the team manager’s name, employee ID, email address, and office number.
+    > 
+
+<br>
+
+5. WHEN the team manager’s name, employee ID, email address, and office number is entered THEN the user is presented with a menu with the option to add an engineer or an intern or to finish building my team.
+    > 
+
+<br>
+
+6. WHEN the engineer option is selectec THEN the user is prompted to enter the engineer’s name, ID, email, and GitHub username, and then taken back to the menu.
+	> 
+
+<br>
+
+7. WHEN the intern option is selected THEN the user is prompted to enter the intern’s name, ID, email, and school, and then taken back to the menu.
+	> 
+
+<br>
+
+8. WHEN the user decides to finish building my team THEN they exit the application, and the HTML is generated.
+  >
+
+<br>
+<br>
+
+### Screenshots ###
+
+---
+
+<br>
+
+N/A
+
+<br>
+
+### Links ###
+
+---
+
+<br>
+
+
+Link to Github repo: https://github.com/JDReeves86/fictional-happiness
+
+
+Link to video demo: 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+---
+
+---
+
+## Assignment Details & Grading Rubric ##
+
+---
+
+---
+
+<br>
+<br>
+
+
 # 10 Object-Oriented Programming: Team Profile Generator
 
 ## Your Task

@@ -1,5 +1,6 @@
 const Employee= require('./Employee')
 
+// Manager class
 class Manager extends Employee {
     constructor(role, name, id, email, officeNumber) {
         super(role, name, id, email);

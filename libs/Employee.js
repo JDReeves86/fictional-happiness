@@ -1,3 +1,5 @@
+
+// Generic Employee class
 class Employee {
     constructor(role, name, id, email) {
         this.role = role;

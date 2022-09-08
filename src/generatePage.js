@@ -1,6 +1,6 @@
 
-//
-const generatePage = (data) => {
+// Generates the HTML skeleton and where the team member cards are placed, calls the buildCards() function.
+const buildPage = (data) => {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -28,13 +28,16 @@ const generatePage = (data) => {
   `
 }
 
-//
+// Takes the data fed from the saved array that is passed in and maps over each element, calling cardBuilder(). Then joins the array elements 
+// into a string to be inserted into the HTML.
 const buildCards = (data) => {
 const cardArr = data.map((element) => cardBuilder(element))
 return cardArr.join('')
 }
 
-//
+// Called by the buildCards() function and receives an employee class with it's own data and methods. Then builds an HTML card element,
+// while extracting the data from the employee instances. Uses a switch statement to determine if the employee instance is a Manager, Engineer,
+// or Intern class by peeking at the role key:value pair.
 function cardBuilder(data) {
   switch(data.role) {
       case 'Manager':
@@ -46,7 +49,7 @@ function cardBuilder(data) {
                 ${data.name}
               </p>
               <p class="subtitle px-4">
-                ${data.role}; 
+                ${data.role} 
               </p>
               <p class="subtitle px-4">
               ${data.getId()}
@@ -76,7 +79,7 @@ function cardBuilder(data) {
                 ${data.name}
               </p>
               <p class="subtitle px-4">
-                ${data.role}; 
+                ${data.role} 
               </p>
               <p class="subtitle px-4">
               ${data.getId()}
@@ -106,7 +109,7 @@ function cardBuilder(data) {
                 ${data.name}
               </p>
               <p class="subtitle px-4">
-                ${data.role}; 
+                ${data.role} 
               </p>
               <p class="subtitle px-4">
               ${data.getId()}
@@ -131,5 +134,5 @@ function cardBuilder(data) {
 }
 
 module.exports = {
-    generatePage,
+    buildPage,
 }

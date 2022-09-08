@@ -1,7 +1,8 @@
 const Engineer = require('../libs/Engineer')
 
-const obj = new Engineer('test', 123, 'test@test.com', 'test@github');
+const obj = new Engineer('Engineer', 'test', 123, 'test@test.com', 'test');
 
+// Engineer unit tests
 describe('Engineer', () => {
     describe('Engineer', () => {
         it("should return an object containing 'name', 'id', & 'email' properties when called with the 'new' keyword.", () => {
@@ -24,21 +25,21 @@ describe('Engineer', () => {
         it("should return a value that is equal to the engineers 'id' property", () => {
 
 
-            expect(obj.getId()).toEqual(123)
+            expect(obj.getId()).toEqual('Employee ID: 123')
         });
     });
     describe('getEmail', () => {
         it("should return a value that is equal to the engineers 'email' property", () => {
 
 
-            expect(obj.getEmail()).toEqual('test@test.com')
+            expect(obj.getEmail()).toEqual('mailto:test@test.com')
         });
     });
     describe('getGithub', () => {
         it("should return a value that is equal to the engineers 'github' property", () => {
             
 
-            expect(obj.getGithub()).toEqual('test@github')
+            expect(obj.getGithub()).toEqual('https://github.com/test')
         });
     });
     describe('getRole', () => {

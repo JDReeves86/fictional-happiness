@@ -1,7 +1,8 @@
 const Manager = require('../libs/Manager.js')
 
-const obj = new Manager('test', 123, 'test@test.com', 12);
+const obj = new Manager('Manager', 'test', 123, 'test@test.com', 12);
 
+// Manager unit tests
 describe('Manager', () => {
     describe('Manager', () => {
         it("should return an object containing 'name', 'id', & 'email' properties when called with the 'new' keyword.", () => {
@@ -24,21 +25,21 @@ describe('Manager', () => {
         it("should return a value that is equal to the Managers 'id' property", () => {
 
 
-            expect(obj.getId()).toEqual(123)
+            expect(obj.getId()).toEqual('Employee ID: 123')
         });
     });
     describe('getEmail', () => {
         it("should return a value that is equal to the Managers 'email' property", () => {
 
 
-            expect(obj.getEmail()).toEqual('test@test.com')
+            expect(obj.getEmail()).toEqual('mailto:test@test.com')
         });
     });
     describe('getOfficeNumber', () => {
         it("should return a value that is equal to the Managers 'officeNumber' property", () => {
             
 
-            expect(obj.getOfficeNumber()).toEqual(12)
+            expect(obj.getOfficeNumber()).toEqual('Office number: 12')
         });
     });
     describe('getRole', () => {

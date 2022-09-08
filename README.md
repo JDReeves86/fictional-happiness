@@ -42,42 +42,42 @@
 
 <br>
 
-1. WHEN a user is prompted for their team members and their information THEN an HTML file is generated that displays a nicely formatted team roster based on user input..
-    > 
+1. WHEN a user is prompted for their team members and their information THEN an HTML file is generated that displays a nicely formatted team roster based on user input.
+    > Upon running of the application the user is prompted to enter information on their team. Once completed an 'index.html' file is written and saved with the information populated into the html.
 
 <br>
 
 2. WHEN a user clicks on an email address in the HTML THEN the default email program opens and populates the TO field of the email with the address.
-    > 
+    > The HTML uses the mailto: functionality so that when a user click on the email address on the webpage the default email application will open with an email addressed to the desired team member.
 
 <br>
 
 3. WHEN users click on the GitHub username THEN that GitHub profile opens in a new tab.
-    > 
+    > A link to the Engineers Github page is generated based upon the input github username.
 <br>
 
 4. WHEN the application is started THEN the user is prompted to enter the team manager’s name, employee ID, email address, and office number.
-    > 
+    > Upon running of the application the user is assumed to be the Manager for the team and is prompted to enter their information. Once they have entered their information, they will be prompted about the desire to add more team members.
 
 <br>
 
 5. WHEN the team manager’s name, employee ID, email address, and office number is entered THEN the user is presented with a menu with the option to add an engineer or an intern or to finish building my team.
-    > 
+    >  If 'Yes' is chosen after entering the Managers information, then the employeeQs() function is called to start the prompts for the other team members. The first question asked is the riole of the team member, options are either 'Engineer' or 'Intern' 
 
 <br>
 
 6. WHEN the engineer option is selectec THEN the user is prompted to enter the engineer’s name, ID, email, and GitHub username, and then taken back to the menu.
-	> 
+	> When 'Engineer' is selected the user will be prompted to enter the Engineers information including their name, employee ID, email address & Github username.
 
 <br>
 
 7. WHEN the intern option is selected THEN the user is prompted to enter the intern’s name, ID, email, and school, and then taken back to the menu.
-	> 
+	> When 'Intern' is selected the user will be prompted to enter the Internss information including their name, employee ID, email address & School.
 
 <br>
 
 8. WHEN the user decides to finish building my team THEN they exit the application, and the HTML is generated.
-  >
+  > Once the user is done answering the information on the desired team member. They are asked if they wish to add more team members. If 'Yes' is chosen, the prompts start over asking what the role of the team member is. Once the user is finished and they choose 'No' the prompts are completed and the HTML page is generated.
 
 <br>
 <br>

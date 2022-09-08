@@ -1,7 +1,7 @@
 const Employee = require('../libs/Employee')
-const obj = new Employee('test', 123, 'test@test.com');
+const obj = new Employee('Employee', 'test', 123, 'test@test.com');
 
-
+// Employee unit tests
 describe('Employee', () => {
     describe('Employee', () => {
         it("should return an object containing 'name', 'id', & 'email' properties when called with the 'new' keyword.", () => {
@@ -22,14 +22,14 @@ describe('Employee', () => {
         it("should return a value that is equal to the employees 'id' property", () => {
 
 
-            expect(obj.getId()).toEqual(123)
+            expect(obj.getId()).toEqual('Employee ID: 123')
         });
     });
     describe('getEmail', () => {
         it("should return a value that is equal to the employees 'id' property", () => {
 
 
-            expect(obj.getEmail()).toEqual('test@test.com')
+            expect(obj.getEmail()).toEqual('mailto:test@test.com')
         });
     });
     describe('getRole', () => {

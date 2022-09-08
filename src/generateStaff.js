@@ -4,10 +4,11 @@ const Engineer = require('../libs/Engineer');
 const Intern = require('../libs/Intern');
 const generatePage = require('./generatePage');
 
-
-
+// Array used to store response objects from the inquirer prompts.
 let employeeArr =[]
 
+// called at the end of the response cycle in inquirer. Uses a switch statement to peek into the object at the role key and depending on the values creates a new instance
+// of each class and pushes those instances into employeeArr.
 const saveEmployee = (response) => {
     switch (response.role) {
         case 'Manager':
@@ -24,12 +25,7 @@ const saveEmployee = (response) => {
     }
 }
 
-const getStaff = () => {
-    return employeeArr
-}
-
-
 module.exports = {
     saveEmployee,
-    getStaff,
+    employeeArr,
 }

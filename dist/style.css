@@ -19,10 +19,7 @@ html {
     color: var(--white);
 }
 
-/* p.title {
-    color: var(--blu);
-} */
-
 .card {
-    min-height: 17rem;
+    min-height: 16rem;
+    outline: 5px solid var(--blu);
 }

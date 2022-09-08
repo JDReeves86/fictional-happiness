@@ -2,6 +2,7 @@ const Intern = require('../libs/Intern.js')
 
 const obj = new Intern('Intern', 'test', 123, 'test@test.com', 'Test University');
 
+// Intern unit tests
 describe('Intern', () => {
     describe('Intern', () => {
         it("should return an object containing 'name', 'id', & 'email' properties when called with the 'new' keyword.", () => {

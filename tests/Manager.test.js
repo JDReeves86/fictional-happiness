@@ -2,6 +2,7 @@ const Manager = require('../libs/Manager.js')
 
 const obj = new Manager('Manager', 'test', 123, 'test@test.com', 12);
 
+// Manager unit tests
 describe('Manager', () => {
     describe('Manager', () => {
         it("should return an object containing 'name', 'id', & 'email' properties when called with the 'new' keyword.", () => {

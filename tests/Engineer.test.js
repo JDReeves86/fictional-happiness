@@ -2,6 +2,7 @@ const Engineer = require('../libs/Engineer')
 
 const obj = new Engineer('Engineer', 'test', 123, 'test@test.com', 'test');
 
+// Engineer unit tests
 describe('Engineer', () => {
     describe('Engineer', () => {
         it("should return an object containing 'name', 'id', & 'email' properties when called with the 'new' keyword.", () => {

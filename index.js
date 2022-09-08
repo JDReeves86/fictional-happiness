@@ -85,7 +85,7 @@ const questions =[
         type: 'input',
         message: 'What school are they associated with?',
         name: 'school',
-        validate: (response) => {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
+        validate(response) {if (response.length == 0) {return 'That is an invalid reponse.'} return true},
         when(response) {
             return response.role === 'Intern'
         },

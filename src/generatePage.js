@@ -46,7 +46,7 @@ function cardBuilder(data) {
                 ${data.name}
               </p>
               <p class="subtitle px-4">
-                ${data.role}; 
+                ${data.role} 
               </p>
               <p class="subtitle px-4">
               ${data.getId()}
@@ -76,7 +76,7 @@ function cardBuilder(data) {
                 ${data.name}
               </p>
               <p class="subtitle px-4">
-                ${data.role}; 
+                ${data.role} 
               </p>
               <p class="subtitle px-4">
               ${data.getId()}
@@ -106,7 +106,7 @@ function cardBuilder(data) {
                 ${data.name}
               </p>
               <p class="subtitle px-4">
-                ${data.role}; 
+                ${data.role} 
               </p>
               <p class="subtitle px-4">
               ${data.getId()}

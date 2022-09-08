@@ -3,17 +3,50 @@ const inquirer = require('inquirer');
 const generateStaff = require('./src/generateStaff');
 const generatePage = require('./src/generatePage');
 
-const questions = [
+const managerQuestions = [
+    {
+        type: 'list',
+        message: 'How are you today?',
+        choices: ['Good', "I'm alright", "It's been a pretty rough day", 'Please leave me alone'],
+        name: 'role',
+        filter() {
+            return 'Manager'
+        },
+    },
+    {
+        type: 'input',
+        message: 'What is your name?',
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: 'What is your Employee ID?',
+        name: 'id',
+    },
+    {
+        type: 'input',
+        message: 'What is your E-mail address?',
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: 'What is your office number?',
+        name: 'officeNumber',
+    },
+    {
+        type: 'list',
+        message: 'Do you want to add members to your team?',
+        choices: ['Yes', 'No'],
+        name: 'addMore',
+    }
+];
+
+const questions =[
     {
         type: 'list',
         message: 'What is the Employees role?',
-        choices: ['Manager', 'Engineer', 'Intern'],
+        choices: ['Engineer', 'Intern'],
         name: 'role',
-        validate: (x) => {
-            if (x == 'Manager' && response.employee.role.includes(x)) {
-                return 'There can be only one manager'
-            }
-        },
     },
     {
         type: 'input',
@@ -32,14 +65,6 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What is the their office number?',
-        name: 'officeNumber',
-        when(response) {
-            return response.role === 'Manager'
-        },
-    },
-    {
-        type: 'input',
         message: 'What is the their Github username?',
         name: 'github',
         when(response) {
@@ -55,29 +80,45 @@ const questions = [
         },
     },
     {
-        type: 'confirm',
+        type: 'list',
         message: 'Do you want to add more employees to your team?',
+        choices: ['Yes', 'No'],
         name: 'addTeam'
     },
 ]
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => 
-        err ? console.log(err) : console.log('Success! Please note that if a license has been chosen, you must input the year and your information in the License section.')
+        err ? console.log(err) : console.log('Success! Please check the "dist" directory for the generated file "index.html"')
     )
 }
 
-function init() {
+function employeeQs() {
     return inquirer.prompt(questions).then((response) => {
-        if (!response.addTeam) {
+        if (response.addTeam == 'No') {
             generateStaff.saveEmployee(response)
             writeToFile('./dist/index.html' ,generatePage.generatePage(generateStaff.getStaff()))
         }
         else {
             generateStaff.saveEmployee(response)
-            return init()
+            return employeeQs()
         }
     })
 }
+
+function init() {
+    return inquirer.prompt(managerQuestions).then((response) => {
+        if (response.addMore == 'No') {
+            generateStaff.saveEmployee(response)
+            writeToFile('./dist/index.html' ,generatePage.generatePage(generateStaff.getStaff()))
+        }
+        else if (response.addMore == 'Yes') {
+            generateStaff.saveEmployee(response)
+            employeeQs()
+        }
+    })
+}
+
+
 
 init()

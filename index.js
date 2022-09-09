@@ -113,7 +113,7 @@ function employeeQs() {
         .then((response) => {
             if (response.addTeam == 'No') {
                 generateStaff.saveEmployee(response)
-                writeToFile('./dist/index.html' ,generatePage.buildPage(generateStaff.employeeArr))
+                writeToFile('./index.html' ,generatePage.buildPage(generateStaff.employeeArr))
             }
             else {
                 generateStaff.saveEmployee(response)

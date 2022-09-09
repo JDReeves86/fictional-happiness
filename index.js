@@ -101,7 +101,7 @@ const questions =[
 // uses fs to write the index.html file.
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => 
-        err ? console.log(err) : console.log('Success! Please check the "dist" directory for the generated file "index.html"')
+        err ? console.log(err) : console.log('Success! Please check for the generated file "index.html"')
     )
 }
 
